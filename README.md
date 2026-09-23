@@ -27,15 +27,16 @@ Component degradation is calculated across two independent vectors: logged dista
 ```math
 \text{Wear}_{\text{distance}} = \left(\frac{\text{Odometer}_{\text{current}} - \text{Odometer}_{\text{last\_service}}}{\text{Interval}_{\text{km}}}\right) \times 100
 ```
+
 ```math
 $$\text{Wear}_{\text{time}} = \left(\frac{\text{Days Since Last Service}}{\text{Interval}_{\text{days}}}\right) \times 100$$
 ```
+
 ```math
 $$\text{Current Wear \%} = \max(\text{Wear}_{\text{distance}}, \text{Wear}_{\text{time}})$$
 ```
-```math
+
 Using historical daily odometer velocity, the system projects precise forecast dates for critical service milestones.
-```
 
 ### 2. Transferable Digital Service Passport
 - **Fraud Mitigation:** Enforces strict temporal odometer validation ($\text{Odometer}_t \ge \text{Odometer}_{t-1}$) to prevent odometer tampering.
